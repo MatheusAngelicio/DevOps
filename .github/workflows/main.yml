@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
       name: test
-      url: 'matheusangelicio.com'
+      url: 'https://matheusangelicio.grafana.net'
     needs: build
     steps:      
       - name: Run a one-line script
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
       name: deploy
-      url: 'matheusangelicio.com'
+      url: 'https://matheusangelicio.grafana.net/'
     needs: test
     steps:      
       - name: Run a one-line script
