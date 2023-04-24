@@ -1,0 +1,30 @@
+name: AtividadeDevOps
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:      
+      - name: Run a one-line script
+        run: echo Build
+        
+  test:
+    runs-on: ubuntu-latest
+    environment: 
+      name: test
+      url: 'matheusangelicio.com'
+    needs: build
+    steps:      
+      - name: Run a one-line script
+        run: echo Test
+        
+  deploy:
+    runs-on: ubuntu-latest
+    environment: 
+      name: deploy
+      url: 'matheusangelicio.com'
+    needs: test
+    steps:      
+      - name: Run a one-line script
+        run: echo Deploy
